@@ -1,19 +1,22 @@
 name:                aeson-tiled
 version:             0.0.1.0
 synopsis:            Aeson instances for the Tiled map editor.
-description:         The mighty Tiled 2d map editor is an open source
+description:         The mighty Tiled 2D map editor is an open source
                      app for creating tile based level maps. This package provides
                      types and aeson instances to read Tiled json files.
-homepage:            https://github.com/schell/aeson-tiled#readme
+homepage:            https://github.com/haskell-game/aeson-tiled
 license:             BSD3
 license-file:        LICENSE
+maintainer:          aenor.realm@gmai.com
 author:              Schell Scivally
-maintainer:          schell@takt.com
-copyright:           Copyright: (c) 2017 Schell Scivally
-category:            Game
+copyright:           (c) 2017 Schell Scivally
+category:            Game Engine
 build-type:          Simple
-extra-source-files:  README.md
 cabal-version:       >=1.10
+
+extra-source-files:
+  README.md,
+  ChangeLog.md
 
 library
   hs-source-dirs:      src
@@ -26,15 +29,13 @@ library
                      , vector     >= 0.11 && < 1
   default-language:    Haskell2010
 
-executable aeson-tiled-exe
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , aeson-tiled
-  default-language:    Haskell2010
+flag tests
+  manual: True
+  default: False
 
 test-suite aeson-tiled-test
+  if !flag(tests)
+    buildable: False
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
@@ -46,7 +47,3 @@ test-suite aeson-tiled-test
                      , bytestring
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
-
-source-repository head
-  type:     git
-  location: https://github.com/schell/aeson-tiled

@@ -1,4 +1,4 @@
-on: [push, pull_request]
+on: [pull_request]
 
 name: build
 
@@ -21,4 +21,5 @@ jobs:
           cabal-version: ${{ matrix.cabal }}
 
       - run: cabal build --only-dependencies -j2
-      - run: cabal build
+      - run: cabal install hspec-discover
+      - run: cabal test
