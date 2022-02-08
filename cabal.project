@@ -1,0 +1,5 @@
+packages: .
+
+package aeson-tiled
+  ghc-options: -Wall -Wcompat
+  flags: +tests
