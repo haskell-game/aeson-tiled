@@ -13,3 +13,4 @@ codex.tags
 *.out
 *.eventlog
 dist-newstyle/
+stack.yaml.lock
