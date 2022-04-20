@@ -18,7 +18,9 @@ GHC versions are supported from 8.10 and follow Stackage LTS + Stackage Nightly 
 
 ## Module structure
 
-- Modules under `Codec.Tiled.*` are concerned with `aeson` representation.
+The modules are designed for qualified imports and `OverloadedRecordDot` extension.
+
+- Modules under `Codec.Tiled.*` are concerned with `aeson` representation, one type at a time.
   They provide JSON `Value` translation to concrete types, but not much beyond that.
   Your application most likely should use its own representation.
 - Modules under `Data.Tiled.*` are types specific to this package.
