@@ -15,7 +15,7 @@ import Codec.Tiled.Tileset.WangSet (WangSet)
 import Data.Tiled.GID (GID)
 
 data Tileset = Tileset
-  { backgroundcolor  :: Text                   -- ^ Hex-formatted color (#RRGGBB or #AARRGGBB) (optional)
+  { backgroundcolor  :: Maybe Text             -- ^ Hex-formatted color (#RRGGBB or #AARRGGBB) (optional)
   , columns          :: Int                    -- ^ The number of tile columns in the tileset
   , firstgid         :: GID                    -- ^ GID corresponding to the first tile in the set
   , grid             :: Maybe Grid             -- ^ (optional)
@@ -24,7 +24,7 @@ data Tileset = Tileset
   , imagewidth       :: Int                    -- ^ Width of source image in pixels
   , margin           :: Int                    -- ^ Buffer between image edge and first tile (pixels)
   , name             :: Text                   -- ^ Name given to this tileset
-  , objectalignment  :: Maybe Text             -- ^ Alignment to use for tile objects (unspecified (default), topleft, top, topright, left, center, right, bottomleft, bottom or bottomright) (since 1.4)
+  , objectalignment  :: Maybe Text             -- ^ Alignment to use for tile objects (unspecified (default), @topleft@, @top@, @topright@, @left@, @center@, @right@, @bottomleft@, @bottom@ or @bottomright@)
   , properties       :: Vector Property        -- ^ Array of Properties
   , source           :: Maybe FilePath         -- ^ The external file that contains this tilesets data
   , spacing          :: Int                    -- ^ Spacing between adjacent tiles in image (pixels)
@@ -37,9 +37,9 @@ data Tileset = Tileset
   , tilewidth        :: Int                    -- ^ Maximum width of tiles in this set
   , transformations  :: Maybe Transformations  -- ^ Allowed transformations (optional)
   , transparentcolor :: Maybe Text             -- ^ Hex-formatted color (#RRGGBB) (optional)
-  , type_            :: Maybe Text             -- ^ tileset (for tileset files, since 1.0)
-  , version          :: Maybe Text             -- ^ The JSON format version (previously a number, saved as string since 1.6)
-  , wangsets         :: Maybe (Vector WangSet) -- ^ Array of Wang sets (since 1.1.5)
+  , type_            :: Maybe Text             -- ^ @tileset@ (for tileset files)
+  , version          :: Maybe Text             -- ^ The JSON format version
+  , wangsets         :: Maybe (Vector WangSet) -- ^ Array of Wang sets
   }
   deriving (Eq, Show, Generic)
 
