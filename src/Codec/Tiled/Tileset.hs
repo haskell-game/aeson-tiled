@@ -12,11 +12,12 @@ import Codec.Tiled.Tileset.Tile (Tile)
 import Codec.Tiled.Tileset.TileOffset (TileOffset)
 import Codec.Tiled.Tileset.Transformations (Transformations)
 import Codec.Tiled.Tileset.WangSet (WangSet)
+import Data.Tiled.GID (GID)
 
 data Tileset = Tileset
   { backgroundcolor  :: Text                   -- ^ Hex-formatted color (#RRGGBB or #AARRGGBB) (optional)
   , columns          :: Int                    -- ^ The number of tile columns in the tileset
-  , firstgid         :: Int                    -- ^ GID corresponding to the first tile in the set
+  , firstgid         :: GID                    -- ^ GID corresponding to the first tile in the set
   , grid             :: Maybe Grid             -- ^ (optional)
   , image            :: FilePath               -- ^ Image used for tiles in this set
   , imageheight      :: Int                    -- ^ Height of source image in pixels
