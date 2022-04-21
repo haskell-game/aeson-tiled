@@ -8,11 +8,11 @@ import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJ
 import Codec.Tiled.Property (Property)
 
 data WangColor = WangColor
-  { color       :: Text             -- ^ Hex-formatted color (#RRGGBB or #AARRGGBB)
-  , name        :: Text             -- ^ Name of Wang color
-  , probability :: Double           -- ^ Probability used when randomizing
-  , properties  :: Vector Property  -- ^ Array of Properties
-  , tile        :: Int              -- ^ Local ID of tile representing terrain
+  { color       :: Text                     -- ^ Hex-formatted color (#RRGGBB or #AARRGGBB)
+  , name        :: Text                     -- ^ Name of Wang color
+  , probability :: Double                   -- ^ Probability used when randomizing
+  , properties  :: Maybe (Vector Property)  -- ^ Array of Properties
+  , tile        :: Int                      -- ^ Local ID of tile representing terrain
   }
   deriving (Eq, Show, Generic)
 

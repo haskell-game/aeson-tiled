@@ -1,12 +1,9 @@
 module Codec.Tiled.Tileset.WangTile where
 
-import Data.Text (Text)
 import Data.Vector (Vector)
 import GHC.Generics (Generic)
 
 import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJSON)
-import Codec.Tiled.Property (Property)
-import Codec.Tiled.Tileset.WangColor (WangColor)
 
 data WangTile = WangTile
   { tileid :: Int        -- ^ Local ID of tile

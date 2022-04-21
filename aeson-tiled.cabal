@@ -27,6 +27,7 @@ library
     Codec.Tiled.Layer
     Codec.Tiled.Layer.Chunk
     Codec.Tiled.Layer.Data
+    Codec.Tiled.Map
     Codec.Tiled.Object
     Codec.Tiled.Object.Point
     Codec.Tiled.Object.Template
@@ -35,6 +36,7 @@ library
     Codec.Tiled.Tileset
     Codec.Tiled.Tileset.Frame
     Codec.Tiled.Tileset.Grid
+    Codec.Tiled.Tileset.Ref
     Codec.Tiled.Tileset.Terrain
     Codec.Tiled.Tileset.Tile
     Codec.Tiled.Tileset.TileOffset
@@ -43,6 +45,7 @@ library
     Codec.Tiled.Tileset.WangSet
     Codec.Tiled.Tileset.WangTile
     Data.Tiled.GID
+    Data.Tiled.Loader
   build-depends:
       base       >= 4.7 && < 5
     , bytestring >= 0.10 && < 1

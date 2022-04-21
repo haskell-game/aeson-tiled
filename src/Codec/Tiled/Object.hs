@@ -21,7 +21,7 @@ data Object = Object
   , polyline   :: Maybe (Vector Point)    -- ^ Array of Points, in case the object is a polyline
   , properties :: Maybe (Vector Property) -- ^ Array of Properties
   , rotation   :: Double                  -- ^ Angle in degrees clockwise
-  , template   :: FilePath                -- ^ Reference to a template file, in case object is a template instance
+  , template   :: Maybe FilePath          -- ^ Reference to a template file, in case object is a template instance
   , text       :: Maybe Object.Text       -- ^ Only used for text objects
   , type_      :: Text                    -- ^ String assigned to type field in editor
   , visible    :: Bool                    -- ^ Whether object is shown in editor.

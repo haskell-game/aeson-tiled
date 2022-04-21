@@ -1,7 +1,5 @@
 module Codec.Tiled.Tileset.Transformations where
 
-import Data.Text (Text)
-import Data.Vector (Vector)
 import GHC.Generics (Generic)
 
 import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJSON)
