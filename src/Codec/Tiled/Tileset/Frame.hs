@@ -6,7 +6,7 @@ import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJ
 
 data Frame = Frame
   { duration :: Int -- ^ Frame duration in milliseconds
-  , tileid   :: Int -- ^ Local tile ID representing this frame
+  , tileId   :: Int -- ^ Local tile ID representing this frame
   }
   deriving (Eq, Show, Generic)
 

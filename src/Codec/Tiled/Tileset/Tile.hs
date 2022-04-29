@@ -13,9 +13,9 @@ data Tile = Tile
   { animation   :: Maybe (Vector Frame)    -- ^ Array of Frames
   , id          :: Int                     -- ^ Local ID of the tile
   , image       :: Maybe FilePath          -- ^ Image representing this tile (optional)
-  , imageheight :: Int                     -- ^ Height of the tile image in pixels
-  , imagewidth  :: Int                     -- ^ Width of the tile image in pixels
-  , objectgroup :: Maybe Layer             -- ^ Layer with type objectgroup, when collision shapes are specified (optional)
+  , imageHeight :: Int                     -- ^ Height of the tile image in pixels
+  , imageWidth  :: Int                     -- ^ Width of the tile image in pixels
+  , objectGroup :: Maybe Layer             -- ^ Layer with type objectgroup, when collision shapes are specified (optional)
   , probability :: Maybe Double            -- ^ Percentage chance this tile is chosen when competing with others in the editor (optional)
   , properties  :: Maybe (Vector Property) -- ^ Array of Properties
   , terrain     :: Maybe (Vector Int)      -- ^ Index of terrain for each corner of tile (optional)

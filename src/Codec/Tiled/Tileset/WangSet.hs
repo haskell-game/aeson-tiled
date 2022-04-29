@@ -15,7 +15,7 @@ data WangSet = WangSet
   , properties :: Maybe (Vector Property) -- ^ array Array of Properties
   , tile       :: Int                     -- ^ Local ID of tile representing terrain
   , type_      :: Text                    -- ^ @corner@, @edge@ or @mixed@ (since 1.5)
-  , wangtiles  :: Vector WangTile         -- ^ Array of Wang tiles
+  , wangTiles  :: Vector WangTile         -- ^ Array of Wang tiles
   }
   deriving (Eq, Show, Generic)
 

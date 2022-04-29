@@ -6,8 +6,8 @@ import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJ
 import Data.Tiled.GID (GID)
 
 data TilesetRef = TilesetRef
-  { firstgid         :: GID      -- ^ GID corresponding to the first tile in the set
-  , source           :: FilePath -- ^ The external file that contains this tilesets data
+  { firstGid :: GID      -- ^ GID corresponding to the first tile in the set
+  , source   :: FilePath -- ^ The external file that contains this tilesets data
   }
   deriving (Eq, Show, Generic)
 

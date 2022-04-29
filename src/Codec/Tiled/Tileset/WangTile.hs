@@ -6,8 +6,8 @@ import GHC.Generics (Generic)
 import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJSON)
 
 data WangTile = WangTile
-  { tileid :: Int        -- ^ Local ID of tile
-  , wangid :: Vector Int -- ^ Array of Wang color indexes (uchar[8])
+  { tileId :: Int        -- ^ Local ID of tile
+  , wangId :: Vector Int -- ^ Array of Wang color indexes (uchar[8])
   }
   deriving (Eq, Show, Generic)
 
