@@ -1,9 +1,10 @@
 module Codec.Tiled
   ( Chunk
-  , LayerData
   , Frame
   , Grid
   , Layer
+  , LayerData
+  , Map
   , Object
   , Point
   , Property
@@ -24,6 +25,7 @@ module Codec.Tiled
 import Codec.Tiled.Layer (Layer)
 import Codec.Tiled.Layer.Chunk (Chunk)
 import Codec.Tiled.Layer.Data (LayerData)
+import Codec.Tiled.Map (Map)
 import Codec.Tiled.Object (Object)
 import Codec.Tiled.Object.Point (Point)
 import Codec.Tiled.Object.Template (Template)

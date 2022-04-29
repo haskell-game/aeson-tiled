@@ -1,9 +1,10 @@
-module Data.Tiled.Loader
-  ( readMap
-  , MapError(..)
-  , decodeMap
-  , writeMap
+module Codec.Tiled.Map.IO
+  ( MapError(..)
+  , readFile
+  , writeFile
   ) where
+
+import Prelude hiding (readFile, writeFile)
 
 import Control.Monad.IO.Class (MonadIO(..))
 import Data.Aeson qualified as Aeson
@@ -20,8 +21,8 @@ newtype MapError = MapError Text
 
 instance Exception MapError
 
-readMap :: MonadIO m => FilePath -> m Map
-readMap source = liftIO do
+readFile :: MonadIO m => FilePath -> m Map
+readFile source = liftIO do
   bytes <- ByteString.readFile source
   case decodeMap bytes of
     Left msg ->
@@ -32,5 +33,5 @@ readMap source = liftIO do
 decodeMap :: ByteString -> Either String Map
 decodeMap = Aeson.eitherDecodeStrict'
 
-writeMap :: MonadIO m => FilePath -> Map -> m ()
-writeMap destination = liftIO . Aeson.encodeFile destination
+writeFile :: MonadIO m => FilePath -> Map -> m ()
+writeFile destination = liftIO . Aeson.encodeFile destination

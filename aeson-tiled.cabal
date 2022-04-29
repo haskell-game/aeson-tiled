@@ -28,6 +28,7 @@ library
     Codec.Tiled.Layer.Chunk
     Codec.Tiled.Layer.Data
     Codec.Tiled.Map
+    Codec.Tiled.Map.IO
     Codec.Tiled.Object
     Codec.Tiled.Object.Point
     Codec.Tiled.Object.Template
@@ -45,7 +46,6 @@ library
     Codec.Tiled.Tileset.WangSet
     Codec.Tiled.Tileset.WangTile
     Data.Tiled.GID
-    Data.Tiled.Loader
   build-depends:
       base       >= 4.7 && < 5
     , bytestring >= 0.10 && < 1
@@ -59,12 +59,14 @@ library
     BlockArguments,
     DeriveGeneric,
     DerivingStrategies,
-    GeneralizedNewtypeDeriving,
     FlexibleContexts,
+    GeneralizedNewtypeDeriving,
     ImportQualifiedPost,
     LambdaCase,
     OverloadedStrings,
-    StrictData
+    PatternSynonyms,
+    RecordWildCards,
+    StrictData,
 
 flag tests
   manual: True
