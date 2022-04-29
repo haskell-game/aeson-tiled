@@ -3,6 +3,9 @@ module Codec.Tiled.Aeson
   , ToJSON(..)
   , genericParseJSON
   , genericToJSON
+  , mkOptions
+  , remapFields
+  , remapFields_
   )
   where
 
@@ -19,7 +22,7 @@ genericParseJSON
      )
   => Aeson.Value
   -> Parser a
-genericParseJSON = Aeson.genericParseJSON (options remapFields)
+genericParseJSON = Aeson.genericParseJSON (mkOptions remapFields)
 
 genericToJSON
   :: ( Generic a
@@ -27,14 +30,19 @@ genericToJSON
      )
   => a
   -> Aeson.Value
-genericToJSON = Aeson.genericToJSON (options remapFields)
+genericToJSON = Aeson.genericToJSON (mkOptions remapFields)
 
-options :: (String -> String) -> Aeson.Options
-options fieldMods = Aeson.defaultOptions
+mkOptions :: (String -> String) -> Aeson.Options
+mkOptions fieldMods = Aeson.defaultOptions
   { Aeson.fieldLabelModifier  = fieldMods
   , Aeson.omitNothingFields   = True
   , Aeson.rejectUnknownFields = False
   }
 
+-- | Drop trailing @_@ and convert field names to lowercase.
 remapFields :: String -> String
-remapFields = dropWhileEnd (== '_') . map toLower
+remapFields = remapFields_ . map toLower
+
+-- | Only drop trailing @_@.
+remapFields_ :: String -> String
+remapFields_ = dropWhileEnd (== '_')
