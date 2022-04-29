@@ -2,6 +2,7 @@ module Data.Tiled.Loader
   ( readMap
   , MapError(..)
   , decodeMap
+  , writeMap
   ) where
 
 import Control.Monad.IO.Class (MonadIO(..))
@@ -30,3 +31,6 @@ readMap source = liftIO do
 
 decodeMap :: ByteString -> Either String Map
 decodeMap = Aeson.eitherDecodeStrict'
+
+writeMap :: MonadIO m => FilePath -> Map -> m ()
+writeMap destination = liftIO . Aeson.encodeFile destination
