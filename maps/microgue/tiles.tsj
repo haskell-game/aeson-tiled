@@ -1,0 +1,21 @@
+{ "columns":16,
+ "image":"tiles.png",
+ "imageheight":80,
+ "imagewidth":128,
+ "margin":0,
+ "name":"microtest",
+ "spacing":0,
+ "tilecount":160,
+ "tiledversion":"1.8.4",
+ "tileheight":8,
+ "tilewidth":8,
+ "transformations":
+    {
+     "hflip":false,
+     "preferuntransformed":true,
+     "rotate":true,
+     "vflip":false
+    },
+ "type":"tileset",
+ "version":"1.8"
+}
