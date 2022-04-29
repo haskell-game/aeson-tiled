@@ -37,6 +37,7 @@ library
     Codec.Tiled.Tileset
     Codec.Tiled.Tileset.Frame
     Codec.Tiled.Tileset.Grid
+    Codec.Tiled.Tileset.IO
     Codec.Tiled.Tileset.Ref
     Codec.Tiled.Tileset.Terrain
     Codec.Tiled.Tileset.Tile
