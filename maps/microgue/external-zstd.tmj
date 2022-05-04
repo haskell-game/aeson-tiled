@@ -1,0 +1,37 @@
+{
+  "compressionlevel": -1,
+  "height": 16,
+  "infinite": false,
+  "layers": [
+    {
+      "compression": "zstd",
+      "data": "KLUv\/WAAA7UHAFLJGyiAx5kDM8BblCAjKCIixr341LpkwIWrp5ThlTG\/Azb16VQXuqva\/d9SX1B4AgJABLu2Dygq5PHEHZI7E7D0rAsMPNqQ+7HcFeO9OeaLBqWaXKNA\/BA1nMHRCk7gnK0STW\/3yS3J7ryhZzfAfrnlVz+gkVUK6hS00hqgAqKhowPnELMDPDqeTnZdiCFtpwcaj92HaqMQEyWL8C4PYAS\/6WwedAdUsJ1Kf5JZQBoSHK8Gfb2YO8znYIyMtG2wcWVZDuhdN2SGFwxFcAhnQBoD67xGQ9DVoVGTwbIOUW7f6R9PZts4qG\/nRiWz1iEe6EI1qjh6ag==",
+      "encoding": "base64",
+      "height": 16,
+      "id": 1,
+      "name": "Calque de Tuiles 1",
+      "opacity": 1,
+      "type": "tilelayer",
+      "visible": true,
+      "width": 16,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "nextlayerid": 2,
+  "nextobjectid": 1,
+  "orientation": "orthogonal",
+  "renderorder": "right-down",
+  "tiledversion": "1.8.4",
+  "tileheight": 8,
+  "tilesets": [
+    {
+      "firstgid": 1,
+      "source": "tiles.tsj"
+    }
+  ],
+  "tilewidth": 8,
+  "type": "map",
+  "version": "1.8",
+  "width": 16
+}

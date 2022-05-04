@@ -20,6 +20,5 @@ jobs:
           ghc-version: ${{ matrix.ghc }}
           cabal-version: ${{ matrix.cabal }}
 
-      - run: cabal build --only-dependencies -j2
-      - run: cabal install hspec-discover
+      - run: cabal build --enable-tests --only-dependencies -j2
       - run: cabal test
