@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.0.2.0] - 2022-05-04
+
+Massive rewrite for Tiled 1.8.
+
 ## [0.0.1.0] - 2022-02-19
 
 Package moved to https://github.com/haskell-game/aeson-tiled
@@ -12,5 +16,6 @@ Package moved to https://github.com/haskell-game/aeson-tiled
 
 Initial release.
 
+[0.0.2.0]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.2.0
 [0.0.1.0]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.1.0
 [0.0.0.1]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.0.1
