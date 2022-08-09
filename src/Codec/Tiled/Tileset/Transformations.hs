@@ -1,4 +1,7 @@
-module Codec.Tiled.Tileset.Transformations where
+module Codec.Tiled.Tileset.Transformations
+  ( Transformations(..)
+  , empty
+  ) where
 
 import GHC.Generics (Generic)
 
@@ -17,3 +20,11 @@ instance FromJSON Transformations where
 
 instance ToJSON Transformations where
   toJSON = genericToJSON
+
+empty :: Transformations
+empty = Transformations
+  { hFlip               = Nothing
+  , vFlip               = Nothing
+  , rotate              = Nothing
+  , preferUntransformed = Nothing
+  }

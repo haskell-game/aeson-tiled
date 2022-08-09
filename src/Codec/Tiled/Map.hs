@@ -1,4 +1,11 @@
-module Codec.Tiled.Map where
+module Codec.Tiled.Map
+  ( Map(..)
+  , empty
+  , pattern ORTHOGONAL
+  , pattern ISOMETRIC
+  , pattern STAGGERED
+  , pattern HEXAGONAL
+  ) where
 
 import Codec.Tiled.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJSON)
 import Data.Text (Text)
@@ -40,3 +47,41 @@ instance FromJSON Map where
 
 instance ToJSON Map where
   toJSON = genericToJSON
+
+empty :: Map
+empty = Map
+    { backgroundColor  = Nothing
+    , compressionLevel = Nothing
+    , height           = 0
+    , hexSideLength    = Nothing
+    , infinite         = Nothing
+    , layers           = mempty
+    , nextLayerId      = 0
+    , nextObjectId     = 0
+    , orientation      = ""
+    , parallaxOriginX  = Nothing
+    , parallaxOriginY  = Nothing
+    , properties       = Nothing
+    , renderOrder      = Nothing
+    , staggerAxis      = Nothing
+    , staggerIndex     = Nothing
+    , tiledVersion     = ""
+    , tileHeight       = 0
+    , tilesets         = mempty
+    , tileWidth        = 0
+    , type_            = "map"
+    , version          = ""
+    , width            = 0
+    }
+
+pattern ORTHOGONAL :: Text
+pattern ORTHOGONAL = "orthogonal"
+
+pattern ISOMETRIC :: Text
+pattern ISOMETRIC = "isometric"
+
+pattern STAGGERED :: Text
+pattern STAGGERED = "staggered"
+
+pattern HEXAGONAL :: Text
+pattern HEXAGONAL = "hexagonal"

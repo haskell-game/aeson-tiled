@@ -1,4 +1,7 @@
-module Codec.Tiled.Tileset where
+module Codec.Tiled.Tileset
+  ( Tileset(..)
+  , empty
+  ) where
 
 import Data.Text (Text)
 import Data.Vector (Vector)
@@ -48,3 +51,32 @@ instance FromJSON Tileset where
 
 instance ToJSON Tileset where
   toJSON = genericToJSON
+
+empty :: Tileset
+empty =  Tileset
+  { backgroundColor  = Nothing
+  , columns          = 0
+  , firstGid         = Nothing
+  , grid             = Nothing
+  , image            = ""
+  , imageHeight      = 0
+  , imageWidth       = 0
+  , margin           = 0
+  , name             = ""
+  , objectAlignment  = Nothing
+  , properties       = Nothing
+  , source           = Nothing
+  , spacing          = 0
+  , terrains         = Nothing
+  , tileCount        = 0
+  , tiledVersion     = Nothing
+  , tileHeight       = 0
+  , tileOffset       = Nothing
+  , tiles            = Nothing
+  , tileWidth        = 0
+  , transformations  = Nothing
+  , transparentColor = Nothing
+  , type_            = Nothing
+  , version          = Nothing
+  , wangSets         = Nothing
+  }

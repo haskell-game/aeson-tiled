@@ -1,4 +1,7 @@
-module Codec.Tiled.World where
+module Codec.Tiled.World
+  ( World(..)
+  , empty
+  ) where
 
 import Data.Aeson (FromJSON(..), ToJSON(..), genericParseJSON, genericToJSON)
 import Data.Text (Text)
@@ -22,3 +25,11 @@ instance FromJSON World where
 
 instance ToJSON World where
   toJSON = genericToJSON (mkOptions remapFields_)
+
+empty :: World
+empty = World
+  { maps                 = Nothing
+  , patterns             = Nothing
+  , type_                = Nothing
+  , onlyShowAdjacentMaps = Nothing
+  }

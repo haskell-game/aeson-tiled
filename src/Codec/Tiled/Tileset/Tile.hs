@@ -1,4 +1,7 @@
-module Codec.Tiled.Tileset.Tile where
+module Codec.Tiled.Tileset.Tile
+  ( Tile(..)
+  , empty
+  ) where
 
 import Data.Text (Text)
 import Data.Vector (Vector)
@@ -28,3 +31,17 @@ instance FromJSON Tile where
 
 instance ToJSON Tile where
   toJSON = genericToJSON
+
+empty :: Tile
+empty = Tile
+  { animation   = Nothing
+  , id          = 0
+  , image       = Nothing
+  , imageHeight = 0
+  , imageWidth  = 0
+  , objectGroup = Nothing
+  , probability = Nothing
+  , properties  = Nothing
+  , terrain     = Nothing
+  , type_       = Nothing
+  }

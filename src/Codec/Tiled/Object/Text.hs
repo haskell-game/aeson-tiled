@@ -1,4 +1,7 @@
-module Codec.Tiled.Object.Text where
+module Codec.Tiled.Object.Text
+  ( Text(..)
+  , empty
+  ) where
 
 import Data.Text qualified as The
 import GHC.Generics (Generic)
@@ -26,3 +29,19 @@ instance FromJSON Text where
 
 instance ToJSON Text where
   toJSON = genericToJSON
+
+empty :: Text
+empty = Text
+  { bold       = Nothing
+  , color      = Nothing
+  , fontFamily = Nothing
+  , hAlign     = Nothing
+  , italic     = Nothing
+  , kerning    = Nothing
+  , pixelSize  = Nothing
+  , strikeout  = Nothing
+  , text       = ""
+  , underline  = Nothing
+  , vAlign     = Nothing
+  , wrap       = Nothing
+  }
