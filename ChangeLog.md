@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.0.2.1] - 2022-08-09
+
+- Fix `firstgid` field name in embedded tilesets.
+
 ## [0.0.2.0] - 2022-05-04
 
 Massive rewrite for Tiled 1.8.

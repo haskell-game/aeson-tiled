@@ -43,6 +43,6 @@ instance ToJSON TilesetRef where
       case toJSON embedded of
         Aeson.Object o ->
           Aeson.Object $
-            KeyMap.insert "firstGid" (toJSON firstGid) o
+            KeyMap.insert "firstgid" (toJSON firstGid) o
         _nonObject ->
           error "assert: TilesetRef is Object"
