@@ -3,6 +3,7 @@
 ## [0.0.2.1] - 2022-08-09
 
 - Fix `firstgid` field name in embedded tilesets.
+- Minimal `aeson` version is actually 2.0 (due to `KeyMap`).
 
 ## [0.0.2.0] - 2022-05-04
 
