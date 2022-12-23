@@ -1,8 +1,12 @@
 # Change Log
 
+## [0.0.2.2] - 2022-12-23
+
+- Fixed bits and flags in Data.Tiled.GID.
+
 ## [0.0.2.1] - 2022-08-09
 
-- Fix `firstgid` field name in embedded tilesets.
+- Fixed `firstgid` field name in embedded tilesets.
 - Minimal `aeson` version is actually 2.0 (due to `KeyMap`).
 - `empty` values added for many «sparse» types.
 

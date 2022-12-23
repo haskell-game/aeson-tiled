@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name: aeson-tiled
-version: 0.0.2.1
+version: 0.0.2.2
 synopsis: Aeson instances for the Tiled map editor.
 description:
   The mighty Tiled 2D map editor is an open source
