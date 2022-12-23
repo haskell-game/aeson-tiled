@@ -58,7 +58,7 @@ fromLocal :: Flags -> Int -> GID
 fromLocal Flags{..} localId =
   GID . fromIntegral $
     localId
-    .|. bool 0 FLIPPED_HORIZONTALLY_BIT flippedHorizontally
-    .|. bool 0 FLIPPED_VERTICALLY_BIT   flippedVertically
-    .|. bool 0 ROTATED_60_BIT           rotated60
-    .|. bool 0 ROTATED_120_BIT          rotated120
+    .|. bool 0 (bit FLIPPED_HORIZONTALLY_BIT) flippedHorizontally
+    .|. bool 0 (bit FLIPPED_VERTICALLY_BIT)   flippedVertically
+    .|. bool 0 (bit ROTATED_60_BIT)           rotated60
+    .|. bool 0 (bit ROTATED_120_BIT)          rotated120
