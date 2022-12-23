@@ -18,16 +18,16 @@ newtype GID = GID { getGID :: Word32 }
   deriving newtype (FromJSON, ToJSON, Storable, Bits)
 
 pattern FLIPPED_HORIZONTALLY_BIT :: Int
-pattern FLIPPED_HORIZONTALLY_BIT = 32
+pattern FLIPPED_HORIZONTALLY_BIT = 31
 
 pattern FLIPPED_VERTICALLY_BIT :: Int
-pattern FLIPPED_VERTICALLY_BIT = 31
+pattern FLIPPED_VERTICALLY_BIT = 30
 
 pattern ROTATED_60_BIT :: Int
-pattern ROTATED_60_BIT = 30
+pattern ROTATED_60_BIT = 29
 
 pattern ROTATED_120_BIT :: Int
-pattern ROTATED_120_BIT = 29
+pattern ROTATED_120_BIT = 28
 
 data Flags = Flags
   { flippedHorizontally :: Bool
