@@ -1,8 +1,9 @@
 # Change Log
 
-## [0.0.2.2] - 2022-12-23
+## [0.0.2.2] - 2022-12-24
 
 - Fixed bits and flags in Data.Tiled.GID.
+- Added tile flag packing and unpacking into Word8/32.
 
 ## [0.0.2.1] - 2022-08-09
 

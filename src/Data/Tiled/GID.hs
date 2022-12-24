@@ -9,7 +9,7 @@ module Data.Tiled.GID where
 import Data.Aeson (FromJSON(..), ToJSON(..))
 import Data.Bits (Bits(..), (.&.))
 import Data.Bool (bool)
-import Data.Word (Word32)
+import Data.Word (Word8, Word32)
 import Foreign (Storable(..))
 import GHC.Generics (Generic)
 
@@ -36,12 +36,41 @@ data Flags = Flags
   , rotated120          :: Bool
   } deriving (Eq, Show, Generic)
 
+{-# INLINEABLE flags #-}
 flags :: GID -> Flags
-flags (GID bits) = Flags
-  { flippedHorizontally = testBit bits FLIPPED_HORIZONTALLY_BIT
-  , flippedVertically   = testBit bits FLIPPED_VERTICALLY_BIT
-  , rotated60           = testBit bits ROTATED_60_BIT
-  , rotated120          = testBit bits ROTATED_120_BIT
+flags = unpack32 . getGID
+
+{-# INLINEABLE pack32 #-}
+pack32 :: Flags -> Word32
+pack32 Flags{..} =
+  bool 0 (bit FLIPPED_HORIZONTALLY_BIT) flippedHorizontally .|.
+  bool 0 (bit FLIPPED_VERTICALLY_BIT)   flippedVertically .|.
+  bool 0 (bit ROTATED_60_BIT)           rotated60 .|.
+  bool 0 (bit ROTATED_120_BIT)          rotated120
+
+{-# INLINEABLE unpack32 #-}
+unpack32 :: Word32 -> Flags
+unpack32 flags32 = Flags
+  { flippedHorizontally = testBit flags32 FLIPPED_HORIZONTALLY_BIT
+  , flippedVertically   = testBit flags32 FLIPPED_VERTICALLY_BIT
+  , rotated60           = testBit flags32 ROTATED_60_BIT
+  , rotated120          = testBit flags32 ROTATED_120_BIT
+  }
+
+{-# INLINEABLE pack8 #-}
+pack8 :: Flags -> Word8
+pack8 flags = fromIntegral (pack32 flags `shiftR` 24)
+
+{-# INLINEABLE unpack8 #-}
+unpack8 :: Word8 -> Flags
+unpack8 bits8 = unpack32 (fromIntegral bits8 `shiftL` 24)
+
+noFlags :: Flags
+noFlags = Flags
+  { flippedHorizontally = False
+  , flippedVertically   = False
+  , rotated60           = False
+  , rotated120          = False
   }
 
 flagBits :: Word32
@@ -55,10 +84,7 @@ toLocal :: GID -> Int
 toLocal (GID bits) = fromIntegral $ bits .&. complement flagBits
 
 fromLocal :: Flags -> Int -> GID
-fromLocal Flags{..} localId =
-  GID . fromIntegral $
-    localId
-    .|. bool 0 (bit FLIPPED_HORIZONTALLY_BIT) flippedHorizontally
-    .|. bool 0 (bit FLIPPED_VERTICALLY_BIT)   flippedVertically
-    .|. bool 0 (bit ROTATED_60_BIT)           rotated60
-    .|. bool 0 (bit ROTATED_120_BIT)          rotated120
+fromLocal flags localId =
+  GID $
+    fromIntegral localId .|.
+    pack32 flags
