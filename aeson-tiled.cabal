@@ -16,10 +16,11 @@ category: Game Engine
 build-type: Simple
 
 extra-source-files:
-  README.md,
-  ChangeLog.md,
   maps/microgue/*.tmj,
   maps/microgue/*.tsj
+extra-doc-files:
+  README.md,
+  ChangeLog.md
 
 library
   hs-source-dirs: src
