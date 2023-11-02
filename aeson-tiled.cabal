@@ -110,3 +110,7 @@ test-suite aeson-tiled-test
     PatternSynonyms,
     RecordWildCards,
     StrictData,
+
+source-repository head
+    type:     git
+    location: https://github.com/haskell-game/aeson-tiled
