@@ -50,6 +50,7 @@ library
     Codec.Tiled.Tileset.WangSet
     Codec.Tiled.Tileset.WangTile
     Codec.Tiled.World
+    Codec.Tiled.World.IO
     Codec.Tiled.World.Map
     Codec.Tiled.World.Pattern
     Data.Tiled.GID
