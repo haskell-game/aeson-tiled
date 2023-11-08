@@ -1,0 +1,34 @@
+{ "compressionlevel":-1,
+ "height":4,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":4,
+         "id":1,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":4,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"test",
+         "type":"string",
+         "value":"foo"
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.8.2",
+ "tileheight":10,
+ "tilesets":[],
+ "tilewidth":10,
+ "type":"map",
+ "version":"1.8",
+ "width":4
+}

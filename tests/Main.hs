@@ -24,6 +24,8 @@ mapCodecTests = testGroup "Map"
       [ testCase "Embedded tileset" mapTestRoundtripEmbedded
       , testCase "External tileset" mapTestRoundtripExternal
       ]
+  , testGroup "Custom properties"
+      [ testCase "Property name" mapTestPropertyName ]
   ]
 
 mapTestRoundtripEmbedded :: IO ()
@@ -43,6 +45,13 @@ mapTestRoundtripExternal = do
     Map.writeFile out embeddedZstd
     embeddedZstdOut <- Map.readFile out
     embeddedZstd @?= embeddedZstdOut
+
+mapTestPropertyName :: IO ()
+mapTestPropertyName = do
+  testMap <- Map.readFile "maps/property-name.tmj"
+  print testMap
+    -- This will fail with “key "propertytype" not found” or
+    -- similar if aeson is not able to parse it correctly.
 
 tilesetCodecTests :: TestTree
 tilesetCodecTests = testGroup "Tileset"
