@@ -16,10 +16,11 @@ category: Game Engine
 build-type: Simple
 
 extra-source-files:
-  README.md,
-  ChangeLog.md,
   maps/microgue/*.tmj,
   maps/microgue/*.tsj
+extra-doc-files:
+  README.md,
+  ChangeLog.md
 
 library
   hs-source-dirs: src
@@ -50,6 +51,7 @@ library
     Codec.Tiled.Tileset.WangSet
     Codec.Tiled.Tileset.WangTile
     Codec.Tiled.World
+    Codec.Tiled.World.IO
     Codec.Tiled.World.Map
     Codec.Tiled.World.Pattern
     Data.Tiled.GID
@@ -108,3 +110,7 @@ test-suite aeson-tiled-test
     PatternSynonyms,
     RecordWildCards,
     StrictData,
+
+source-repository head
+    type:     git
+    location: https://github.com/haskell-game/aeson-tiled
