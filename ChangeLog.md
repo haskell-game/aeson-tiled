@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.2.3] - 2023-11-08
+
+- Exposed `Codec.Tiled.World.IO`.
+- Made `propertytype` optional.
+
 ## [0.0.2.2] - 2022-12-24
 
 - Fixed bits and flags in Data.Tiled.GID.
@@ -27,6 +32,7 @@ Package moved to https://github.com/haskell-game/aeson-tiled
 
 Initial release.
 
+[0.0.2.3]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.2.3
 [0.0.2.2]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.2.2
 [0.0.2.1]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.2.1
 [0.0.2.0]: https://github.com/haskell-game/aeson-tiled/releases/tag/v0.0.2.0
